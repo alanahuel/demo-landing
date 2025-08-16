@@ -1,6 +1,0 @@
----
-alwaysApply: false
----
-# REFACTORIZACIÓN PARA LEGIBILIDAD
-
-Analiza el bloque de código seleccionado. Aplica los principios de KISS y DRY. Descompón funciones largas en unidades más pequeñas y con una única responsabilidad. Simplifica condicionales complejos (por ejemplo, usando cláusulas de guarda). Mejora el nombramiento de variables para que sea más descriptivo.
