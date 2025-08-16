@@ -8,7 +8,12 @@
     "preview": "astro preview",
     "astro": "astro",
     "vercel-build": "astro build",
-    "start": "astro preview"
+    "start": "astro preview",
+    "clean": "rm -rf dist .astro",
+    "clean:win": "if exist dist rmdir /s /q dist && if exist .astro rmdir /s /q .astro",
+    "build:clean": "npm run clean && npm run build",
+    "build:clean:win": "npm run clean:win && npm run build",
+    "verify": "node scripts/verify-build.js"
   },
   "dependencies": {
     "@astrojs/vercel": "^8.2.6",
