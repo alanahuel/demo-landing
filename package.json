@@ -6,9 +6,12 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "vercel-build": "astro build",
+    "start": "astro preview"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.2.6",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.2"
   },

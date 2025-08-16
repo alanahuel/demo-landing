@@ -1,10 +1,6 @@
-# Astro Starter Kit: Basics
+# Demo Landing - Astro + Vercel
 
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Landing page moderna construida con Astro y desplegada en Vercel.
 
 ## 🚀 Project Structure
 
@@ -15,18 +11,18 @@ Inside of your Astro project, you'll see the following folders and files:
 ├── public/
 │   └── favicon.svg
 ├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+├── astro.config.mjs
+├── vercel.json
 └── package.json
 ```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
 ## 🧞 Commands
 
@@ -41,6 +37,50 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
+## 🚀 Despliegue en Vercel
+
+### Configuración Automática
+
+1. **Conectar con GitHub**: Ve a [vercel.com](https://vercel.com) y conecta tu repositorio de GitHub
+2. **Importar Proyecto**: Selecciona este repositorio
+3. **Configuración Automática**: Vercel detectará automáticamente que es un proyecto Astro
+4. **Despliegue**: Haz clic en "Deploy" y tu sitio estará listo
+
+### Configuración Manual
+
+Si prefieres configurar manualmente:
+
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
+
+# Login en Vercel
+vercel login
+
+# Desplegar
+vercel
+
+# Para producción
+vercel --prod
+```
+
+### Variables de Entorno
+
+Si tu proyecto necesita variables de entorno, configúralas en el dashboard de Vercel:
+- Ve a tu proyecto en Vercel
+- Settings → Environment Variables
+- Agrega las variables necesarias
+
+## 🎯 Características
+
+- ✅ **Astro 5**: Framework moderno para sitios estáticos
+- ✅ **Tailwind CSS**: Sistema de diseño utilitario
+- ✅ **Vercel**: Despliegue automático y CDN global
+- ✅ **SSG**: Generación estática en tiempo de compilación
+- ✅ **Performance**: Optimizado para velocidad y SEO
+
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro Documentation](https://docs.astro.build)
+- [Vercel Documentation](https://vercel.com/docs)
+- [Tailwind CSS](https://tailwindcss.com)
