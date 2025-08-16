@@ -26,7 +26,7 @@
       
       <!-- Botón principal (inverso) -->
       <button 
-        onclick="scrollToSection('contact')"
+        id="final-cta-primary"
         class="btn-accessible btn-hover-lift focus-visible-ring bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-50 text-lg shadow-lg hover:shadow-xl px-8 py-4"
       >
         🚀 Comenzar ahora
@@ -34,7 +34,7 @@
       
       <!-- Botón secundario -->
       <button 
-        onclick="openCalendlyPopup()"
+        id="final-cta-secondary"
         class="btn-accessible btn-hover-lift focus-visible-ring border-2 border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 text-lg backdrop-blur-sm px-8 py-4"
       >
         📞 Hablar con ventas
@@ -71,3 +71,27 @@
   <div class="absolute bottom-10 right-10 w-40 h-40 bg-blue-800/20 rounded-full blur-3xl"></div>
   
 </section>
+
+<script>
+  // Event listeners para los CTAs finales
+  document.addEventListener('DOMContentLoaded', function() {
+    const finalCTAPrimary = document.getElementById('final-cta-primary');
+    const finalCTASecondary = document.getElementById('final-cta-secondary');
+    
+    if (finalCTAPrimary) {
+      finalCTAPrimary.addEventListener('click', () => {
+        if ((window as any).scrollToSection) {
+          (window as any).scrollToSection('contact');
+        }
+      });
+    }
+    
+    if (finalCTASecondary) {
+      finalCTASecondary.addEventListener('click', () => {
+        if ((window as any).openCalendlyPopup) {
+          (window as any).openCalendlyPopup();
+        }
+      });
+    }
+  });
+</script>

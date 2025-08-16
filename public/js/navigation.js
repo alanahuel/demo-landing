@@ -48,3 +48,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Hacer funciones disponibles globalmente
 window.scrollToSection = scrollToSection;
+
+// También asegurar que openCalendlyPopup esté disponible globalmente
+// Esta función se define en CalendlyModal.astro
+if (typeof window.openCalendlyPopup === 'undefined') {
+  window.openCalendlyPopup = function() {
+    console.warn('openCalendlyPopup no está disponible. Asegúrate de que CalendlyModal esté cargado.');
+  };
+}

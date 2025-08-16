@@ -110,7 +110,7 @@
         ¿No encuentras la respuesta que buscas?
       </p>
       <button 
-        onclick="openCalendlyPopup()"
+        id="faq-cta-button"
         class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl"
       >
         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -166,5 +166,15 @@
         }
       });
     });
+
+    // Event listener para el CTA del FAQ
+    const faqCTAButton = document.getElementById('faq-cta-button');
+    if (faqCTAButton) {
+      faqCTAButton.addEventListener('click', () => {
+        if ((window as any).openCalendlyPopup) {
+          (window as any).openCalendlyPopup();
+        }
+      });
+    }
   });
 </script>

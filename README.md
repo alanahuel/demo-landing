@@ -78,6 +78,9 @@ Si tu proyecto necesita variables de entorno, configúralas en el dashboard de V
 - ✅ **Vercel**: Despliegue automático y CDN global
 - ✅ **SSG**: Generación estática en tiempo de compilación
 - ✅ **Performance**: Optimizado para velocidad y SEO
+- ✅ **Navegación enlazada**: Smooth scroll y enlaces funcionales
+- ✅ **FAQ interactivo**: Acordeón con JavaScript
+- ✅ **Modal Calendly**: Integración para reserva de demos
 
 ## 👀 Want to learn more?
 
