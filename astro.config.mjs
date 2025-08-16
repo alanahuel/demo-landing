@@ -1,7 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import tailwindcss from "@tailwindcss/vite";
-import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,8 +13,8 @@ export default defineConfig({
     },
   }),
   
-  // Configuración de SEO
-  site: 'https://demo-landing.vercel.app',
+  // Configuración de SEO - Actualizar al dominio correcto
+  site: 'https://demo-landing-psi.vercel.app',
   
   vite: {
     plugins: [tailwindcss()],

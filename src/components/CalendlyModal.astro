@@ -1,5 +1,5 @@
 ---
-// Componente de Calendly optimizado para todas las pantallas
+// Componente de Calendly optimizado para evitar problemas de CORS
 ---
 
 <!-- Botón de Calendly para todas las pantallas -->
@@ -16,78 +16,88 @@
   </button>
 </div>
 
+<!-- Modal de Calendly -->
+<div id="calendlyModal" class="fixed inset-0 z-50 hidden">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+    <div class="relative bg-white rounded-lg shadow-xl w-full max-w-4xl h-[600px]">
+      <!-- Header del modal -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200">
+        <h3 class="text-lg font-semibold text-gray-900">Reserva tu demo</h3>
+        <button 
+          onclick="closeCalendlyModal()"
+          class="text-gray-400 hover:text-gray-600 transition-colors"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Contenido del modal -->
+      <div class="p-4 h-[calc(600px-80px)]">
+        <iframe
+          id="calendlyFrame"
+          src="https://calendly.com/alanparaa/30min"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          class="rounded-lg"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Script inline con directiva is:inline para evitar problemas de build -->
 <script is:inline>
   // Función global para abrir el popup de Calendly
   function openCalendlyPopup() {
     try {
-      // Verificar si Calendly está disponible
-      if (typeof window.Calendly !== 'undefined' && window.Calendly.initPopupWidget) {
-        window.Calendly.initPopupWidget({
-          url: 'https://calendly.com/alanparaa/30min',
-          text: 'Reserva demo',
-          color: '#15803d',
-          textColor: '#ffffff'
-        });
-      } else {
-        // Fallback: abrir en nueva pestaña si Calendly no está disponible
-        window.open('https://calendly.com/alanparaa/30min', '_blank', 'noopener,noreferrer');
-        console.warn('Calendly no disponible, usando fallback');
+      // Mostrar el modal
+      const modal = document.getElementById('calendlyModal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+        
+        // Enfocar el iframe para accesibilidad
+        const iframe = document.getElementById('calendlyFrame');
+        if (iframe) {
+          iframe.focus();
+        }
       }
     } catch (error) {
-      console.warn('Error al abrir Calendly:', error);
+      console.warn('Error al abrir modal de Calendly:', error);
       // Fallback: abrir en nueva pestaña
       window.open('https://calendly.com/alanparaa/30min', '_blank', 'noopener,noreferrer');
     }
   }
 
-  // Función para cargar recursos de Calendly de forma segura
-  function loadCalendlyResources() {
-    // Solo cargar en producción o si estamos en un dominio permitido
-    const isLocalhost = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    
-    if (isLocalhost) {
-      console.log('Desarrollo local detectado, usando fallback directo');
-      return;
-    }
-
-    // Cargar CSS de Calendly si no está ya cargado
-    if (!document.querySelector('link[href*="calendly.com"]')) {
-      const link = document.createElement('link');
-      link.href = 'https://assets.calendly.com/assets/external/widget.css';
-      link.rel = 'stylesheet';
-      link.crossOrigin = 'anonymous';
-      link.onerror = function() {
-        console.warn('Error al cargar CSS de Calendly');
-      };
-      document.head.appendChild(link);
-    }
-
-    // Cargar JS de Calendly si no está ya cargado
-    if (!document.querySelector('script[src*="calendly.com"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://assets.calendly.com/assets/external/widget.js';
-      script.async = true;
-      script.crossOrigin = 'anonymous';
-      script.onload = function() {
-        console.log('Calendly cargado correctamente');
-      };
-      script.onerror = function() {
-        console.warn('Error al cargar Calendly, usando fallback');
-      };
-      document.head.appendChild(script);
+  // Función para cerrar el modal
+  function closeCalendlyModal() {
+    const modal = document.getElementById('calendlyModal');
+    if (modal) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = ''; // Restaurar scroll del body
     }
   }
 
-  // Cargar recursos cuando se cargue la página
+  // Cerrar modal al hacer clic fuera del contenido
   document.addEventListener('DOMContentLoaded', function() {
-    loadCalendlyResources();
+    const modal = document.getElementById('calendlyModal');
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeCalendlyModal();
+        }
+      });
+    }
   });
 
-  // También intentar cargar si el DOM ya está listo
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadCalendlyResources);
-  } else {
-    loadCalendlyResources();
-  }
+  // Cerrar modal con tecla Escape
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeCalendlyModal();
+    }
+  });
 </script>
