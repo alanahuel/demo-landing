@@ -4,7 +4,7 @@
 
 <header 
   id="header"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/60 backdrop-blur-sm border-b border-gray-100/30"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-white/60 backdrop-blur-sm border-b border-gray-100/30"
 >
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex items-center justify-between h-16">
@@ -33,7 +33,7 @@
       <!-- CTA desktop -->
       <div class="hidden md:flex items-center">
         <button 
-          class="px-6 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+          class="btn-accessible btn-hover-lift focus-visible-ring px-6 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white"
         >
           Reserva demo
         </button>
@@ -43,7 +43,7 @@
       <div class="md:hidden">
         <button 
           id="mobile-menu-button"
-          class="text-gray-700 hover:text-gray-900 focus:outline-none p-2"
+          class="btn-accessible focus-visible-ring text-gray-700 hover:text-gray-900 p-2"
           aria-label="Abrir menú móvil"
         >
           <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -69,7 +69,7 @@
           FAQ
         </a>
         <div class="pt-4 pb-3 border-t border-gray-200/50">
-          <button class="w-full px-3 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200">
+          <button class="w-full btn-accessible btn-hover-lift focus-visible-ring px-3 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white">
             Reserva demo
           </button>
         </div>
@@ -109,13 +109,31 @@
   const header = document.getElementById('header');
   
   if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 10) {
-        header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
-        header.classList.remove('bg-white/60', 'backdrop-blur-sm');
+    let ticking = false;
+    
+    function updateHeader() {
+      if (!header) return;
+      
+      const scrollY = window.scrollY;
+      
+      if (scrollY > 20) {
+        header.classList.add('bg-white/90', 'backdrop-blur-xl', 'shadow-lg', 'border-gray-200/50');
+        header.classList.remove('bg-white/60', 'backdrop-blur-sm', 'border-gray-100/30');
+      } else if (scrollY > 10) {
+        header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-md', 'border-gray-150/40');
+        header.classList.remove('bg-white/60', 'backdrop-blur-sm', 'border-gray-100/30', 'bg-white/90', 'backdrop-blur-xl', 'shadow-lg', 'border-gray-200/50');
       } else {
-        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
-        header.classList.add('bg-white/60', 'backdrop-blur-sm');
+        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-md', 'border-gray-150/40', 'bg-white/90', 'backdrop-blur-xl', 'shadow-lg', 'border-gray-200/50');
+        header.classList.add('bg-white/60', 'backdrop-blur-sm', 'border-gray-100/30');
+      }
+      
+      ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateHeader);
+        ticking = true;
       }
     });
   }

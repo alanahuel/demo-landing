@@ -24,10 +24,10 @@
         
         <!-- CTAs -->
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+          <a href="#contact" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl">
             Comenzar ahora
           </a>
-          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-lg transition-all duration-200 hover:bg-gray-50">
+          <a href="#demo" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-lg hover:bg-gray-50">
             Ver cómo funciona
           </a>
         </div>
@@ -92,8 +92,11 @@
           </div>
         </div>
         
-        <!-- Sticker flotante -->
-        <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12">
+        <!-- Sticker flotante con animación -->
+        <div 
+          id="hero-sticker"
+          class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 fade-slide-in"
+        >
           <div class="text-sm font-bold">Nudge activo</div>
           <div class="text-xs">+18% activaciones</div>
         </div>
@@ -102,3 +105,26 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Animación del sticker al entrar en viewport
+  const heroSticker = document.getElementById('hero-sticker');
+  
+  if (heroSticker) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Pequeño delay para que se vea más natural
+          setTimeout(() => {
+            entry.target.classList.add('in-view');
+          }, 300);
+        }
+      });
+    }, {
+      threshold: 0.3,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    observer.observe(heroSticker);
+  }
+</script>
