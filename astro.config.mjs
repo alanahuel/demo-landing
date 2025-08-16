@@ -11,8 +11,18 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
+    // Evitar problemas de cache
+    includeFiles: ['./src/**/*'],
+    // Forzar rebuild en cada deploy
+    maxDuration: 10,
   }),
   vite: {
     plugins: [tailwindcss()],
+    // Evitar cache durante desarrollo
+    clearScreen: false,
+  },
+  // Forzar rebuild completo
+  build: {
+    inlineStylesheets: 'auto',
   },
 });
