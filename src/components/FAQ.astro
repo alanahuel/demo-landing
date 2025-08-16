@@ -1,0 +1,170 @@
+---
+// Componente de FAQ (Preguntas Frecuentes)
+---
+
+<section id="faq" class="py-16 bg-gray-50">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Encabezado de la sección -->
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-gray-900 sm:text-4xl mb-4">
+        Preguntas Frecuentes
+      </h2>
+      <p class="text-lg text-gray-600">
+        Resolvemos las dudas más comunes sobre nuestro sistema de onboarding
+      </p>
+    </div>
+
+    <!-- Lista de preguntas y respuestas -->
+    <div class="space-y-6">
+      
+      <!-- FAQ 1 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <button 
+          class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          aria-expanded="false"
+          data-target="faq-1"
+        >
+          <span class="text-lg font-medium text-gray-900">
+            ¿Cómo funciona el sistema de onboarding sin fricción?
+          </span>
+          <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="faq-1" class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Nuestro sistema optimiza cada paso del proceso de onboarding, eliminando barreras y guiando a los usuarios de manera intuitiva hacia la activación completa del producto. Utilizamos técnicas de UX probadas y análisis de datos en tiempo real para crear una experiencia fluida.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <button 
+          class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          aria-expanded="false"
+          data-target="faq-2"
+        >
+          <span class="text-lg font-medium text-gray-900">
+            ¿Qué resultados puedo esperar?
+          </span>
+          <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="faq-2" class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Los clientes han experimentado un aumento promedio en la tasa de activación del 23% al 41%, con implementaciones que toman solo semanas. Además, observan una reducción del 35% en el tiempo de onboarding y un aumento del 28% en la retención de usuarios.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <button 
+          class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          aria-expanded="false"
+          data-target="faq-3"
+        >
+          <span class="text-lg font-medium text-gray-900">
+            ¿Es difícil de implementar?
+          </span>
+          <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="faq-3" class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            No, nuestra implementación es ligera y se integra fácilmente con sistemas existentes. Proporcionamos soporte completo durante todo el proceso, documentación detallada y nuestro equipo técnico te acompaña en cada paso.
+          </p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="bg-white rounded-lg shadow-sm border border-gray-200">
+        <button 
+          class="faq-question w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          aria-expanded="false"
+          data-target="faq-4"
+        >
+          <span class="text-lg font-medium text-gray-900">
+            ¿Qué tipo de soporte ofrecen?
+          </span>
+          <svg class="faq-icon w-5 h-5 text-gray-500 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div id="faq-4" class="faq-answer hidden px-6 pb-4">
+          <p class="text-gray-600 leading-relaxed">
+            Ofrecemos soporte 24/7 durante la implementación y los primeros 3 meses. Incluye chat directo con nuestro equipo técnico, sesiones de consultoría personalizadas y acceso a nuestra base de conocimientos completa.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA al final del FAQ -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-6">
+        ¿No encuentras la respuesta que buscas?
+      </p>
+      <button 
+        onclick="openCalendlyPopup()"
+        class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl"
+      >
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.959 8.959 0 01-4.906-1.476L3 21l2.476-5.094A8.959 8.959 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"></path>
+        </svg>
+        Habla con nuestro equipo
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Funcionalidad del FAQ - Acordeón
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', function() {
+        const targetId = this.getAttribute('data-target');
+        const answer = document.getElementById(targetId);
+        const icon = this.querySelector('.faq-icon');
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        // Cerrar todas las otras preguntas
+        faqQuestions.forEach(otherQuestion => {
+          if (otherQuestion !== this) {
+            const otherTargetId = otherQuestion.getAttribute('data-target');
+            const otherAnswer = document.getElementById(otherTargetId);
+            const otherIcon = otherQuestion.querySelector('.faq-icon');
+            
+            otherQuestion.setAttribute('aria-expanded', 'false');
+            otherAnswer.classList.add('hidden');
+            if (otherIcon instanceof HTMLElement) {
+              otherIcon.style.transform = 'rotate(0deg)';
+            }
+          }
+        });
+        
+        // Toggle la pregunta actual
+        if (isExpanded) {
+          this.setAttribute('aria-expanded', 'false');
+          answer.classList.add('hidden');
+          if (icon instanceof HTMLElement) {
+            icon.style.transform = 'rotate(0deg)';
+          }
+        } else {
+          this.setAttribute('aria-expanded', 'true');
+          answer.classList.remove('hidden');
+          if (icon instanceof HTMLElement) {
+            icon.style.transform = 'rotate(180deg)';
+          }
+        }
+      });
+    });
+  });
+</script>

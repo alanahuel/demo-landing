@@ -33,6 +33,7 @@
       <!-- CTA desktop -->
       <div class="hidden md:flex items-center">
         <button 
+          onclick="scrollToSection('contact')"
           class="btn-accessible btn-hover-lift focus-visible-ring px-6 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white"
         >
           Reserva demo
@@ -69,7 +70,10 @@
           FAQ
         </a>
         <div class="pt-4 pb-3 border-t border-gray-200/50">
-          <button class="w-full btn-accessible btn-hover-lift focus-visible-ring px-3 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white">
+          <button 
+            onclick="scrollToSection('contact')"
+            class="w-full btn-accessible btn-hover-lift focus-visible-ring px-3 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white"
+          >
             Reserva demo
           </button>
         </div>
@@ -137,4 +141,6 @@
       }
     });
   }
+
+
 </script>
