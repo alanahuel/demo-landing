@@ -1,9 +1,0 @@
----
-alwaysApply: false
----
-# BORRADOR DE DOCUMENTACIÓN DE COMPONENTE
-
-Analiza las `Props` y la lógica del componente seleccionado. Genera un bloque de documentación en Markdown que explique:
-1.  El propósito del componente.
-2.  Una descripción de cada prop, incluyendo su tipo y si es opcional.
-3.  Ejemplos de uso básicos.[1]

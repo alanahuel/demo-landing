@@ -1,6 +1,0 @@
----
-alwaysApply: false
----
-# GENERADOR DE ESQUEMA ZOD
-
-Dada la siguiente interfaz de TypeScript, genera un esquema de validación de Zod que coincida. Este esquema se utilizará para la validación de entrada en Astro Actions, por lo que debe ser riguroso.[54]
