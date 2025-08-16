@@ -4,6 +4,10 @@
       "source": "/(.*)",
       "headers": [
         {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
         },
@@ -18,14 +22,16 @@
       ]
     }
   ],
-  "functions": {
-    "src/pages/**/*.astro": {
-      "maxDuration": 30
-    }
-  },
   "build": {
     "env": {
       "NODE_ENV": "production"
     }
-  }
+  },
+  "functions": {},
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

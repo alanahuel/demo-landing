@@ -12,6 +12,10 @@ export default defineConfig({
     webAnalytics: {
       enabled: false, // Deshabilitar web analytics temporalmente
     },
+    // Asegurar que Vercel siempre ejecute un nuevo build
+    includeFiles: ['./src/**/*'],
+    // Configuración para evitar caché en builds
+    maxDuration: 60,
   }),
   
   // Configuración de SEO - Actualizar al dominio correcto
@@ -26,6 +30,8 @@ export default defineConfig({
           manualChunks: undefined, // Evitar chunks manuales que pueden causar problemas
         },
       },
+      // Asegurar que los assets se generen con hashes únicos
+      assetsInlineLimit: 0,
     },
   },
   // Configuración de build optimizada
