@@ -7,7 +7,7 @@ description: "Define Vercel como la plataforma de despliegue exclusiva y estable
 
 **DIRECTIVAS DE DESPLIEGUE:**
 
-1.  **PLATAFORMA ÚNICA ES VERCEL:** Todo el despliegue, configuración de dominios y gestión de variables de entorno de producción se realiza exclusivamente a través de Vercel.
+1.  **PLATAFORMA ÚNICA ES VERCEL:** Todo el despliegue, configuración de dominios y gestión de variables de entorno de producción se realiza exclusivamente a través de Vercel. Pero no uses vercel.json
 
 2.  **ADAPTADOR DE ASTRO PARA VERCEL:** El proyecto debe estar configurado para usar el adaptador oficial de Astro para Vercel. Asegúrate de que `astro.config.mjs` incluya la integración correcta (`@astrojs/vercel/static` o `@astrojs/vercel/serverless` según corresponda al modo de salida).
 
