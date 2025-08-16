@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+
+import Benefits from '../components/Benefits.astro';
+import CalendlyModal from '../components/CalendlyModal.astro';
+import FinalCTA from '../components/FinalCTA.astro';
+import Hero from '../components/Hero.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Logos from '../components/Logos.astro';
+import Steps from '../components/Steps.astro';
+import Testimonial from '../components/Testimonial.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
 ---
 
 <Layout>
-	<Welcome />
+	<Hero/>
+	<Logos/>
+	<Steps/>
+	<Benefits/>
+	<LeadForm/>
+	<Testimonial/>
+	<FinalCTA/>
 </Layout>

@@ -1,0 +1,11 @@
+/node_modules
+.cursor
+/dist
+.vscode
+.git
+.gitignore
+.cursorignore
+.cursorrules
+.cursorconfig
+.cursorconfig.json
+.cursorconfig.json

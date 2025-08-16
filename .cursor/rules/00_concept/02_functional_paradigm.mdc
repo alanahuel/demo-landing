@@ -1,0 +1,15 @@
+---
+description: "Directrices para aplicar principios de Programación Funcional como inmutabilidad, funciones puras y estilo declarativo para construir código predecible y robusto."
+---
+
+# PARADIGMA DE PROGRAMACIÓN FUNCIONAL
+
+Cuando sea apropiado, especialmente al manipular datos y gestionar el estado, prefiere los principios de la programación funcional para reducir errores y complejidad.
+
+1.  **Pureza y Sin Efectos Secundarios (Side Effects)**: Tus funciones deben ser puras siempre que sea posible. Esto significa que:
+    * [cite_start]Su valor de retorno depende únicamente de sus argumentos de entrada[cite: 427].
+    * [cite_start]No modifican el estado fuera de su propio ámbito (variables globales, argumentos de entrada, etc.)[cite: 429, 366]. [cite_start]Las funciones puras son predecibles, fáciles de testear y de razonar[cite: 431].
+
+2.  **Inmutabilidad**: Trata los datos como inmutables. En lugar de modificar un objeto o array existente, crea uno nuevo con los valores actualizados. [cite_start]Esto previene toda una clase de errores relacionados con el estado compartido[cite: 433, 435].
+
+3.  **Estilo Declarativo sobre Imperativo**: Enfócate en describir **qué** quieres lograr, no **cómo** hacerlo paso a paso. Utiliza funciones de orden superior como `map`, `filter` y `reduce` en lugar de bucles `for` manuales. [cite_start]El código declarativo es más conciso y expresivo[cite: 438, 448].

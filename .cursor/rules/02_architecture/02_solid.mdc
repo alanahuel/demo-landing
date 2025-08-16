@@ -1,0 +1,28 @@
+---
+globs: ["src/**/*.ts", "src/**/*.js"]
+alwaysApply: false
+description: "Aplicación de los principios SOLID para código TypeScript/JavaScript."
+---
+# PRINCIPIOS SOLID EN TYPESCRIPT/JAVASCRIPT
+
+Al escribir o modificar código TypeScript/JavaScript, sigue estas directrices:
+
+1.  **Principio de Responsabilidad Única (SRP):**
+    *   Cada función, clase o módulo debe tener una única razón para cambiar.
+    *   **Acción:** Al modificar una función, declara su responsabilidad principal. Si el cambio solicitado introduce una nueva responsabilidad no relacionada, indícalo y sugiere crear un módulo separado.[25, 26]
+
+2.  **Principio Abierto/Cerrado (OCP):**
+    *   Las entidades de software deben estar abiertas para la extensión, pero cerradas para la modificación.
+    *   **Acción:** Cuando se te pida añadir una nueva funcionalidad a una clase existente, analiza primero si se puede lograr a través de la extensión (herencia, composición, patrones de estrategia). EVITA modificar el código existente y probado. Propón el método de extensión claramente.[27, 28]
+
+3.  **Principio de Sustitución de Liskov (LSP):**
+    *   Los objetos de una superclase deben ser reemplazables por objetos de sus subclases sin afectar la corrección del programa.
+    *   **Acción:** Si se crea una subclase, asegúrate de que sus métodos cumplan con el contrato de la superclase. No debe alterar las expectativas del comportamiento de la clase base.[25, 26]
+
+4.  **Principio de Segregación de Interfaces (ISP):**
+    *   Ningún cliente debe ser forzado a depender de interfaces que no utiliza.
+    *   **Acción:** Prefiere interfaces (o tipos de TypeScript) pequeñas y específicas en lugar de interfaces grandes y monolíticas. Si una clase no necesita un método de una interfaz que implementa, es una señal de que la interfaz debe ser dividida.[27, 28]
+
+5.  **Principio de Inversión de Dependencias (DIP):**
+    *   Los módulos de alto nivel no deben depender de módulos de bajo nivel. Ambos deben depender de abstracciones.
+    *   **Acción:** Cuando un módulo de alto nivel (por ejemplo, un caso de uso) necesita un servicio (por ejemplo, un cliente API), define una abstracción (una `interface` o `type` de TypeScript) para ese servicio. El módulo de alto nivel debe depender de esta abstracción, la cual será inyectada, no de una implementación concreta.[25, 28]

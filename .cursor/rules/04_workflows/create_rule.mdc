@@ -1,0 +1,15 @@
+---
+alwaysApply: false
+description: "Una meta-regla para generar nuevas reglas de Cursor bien estructuradas."
+---
+# ASISTENTE DE CREACIÓN DE REGLAS DE CURSOR
+
+Actúa como un experto en la creación de reglas para el IDE de Cursor. Tu tarea es ayudarme a generar un nuevo archivo de regla `.mdc` siguiendo las mejores prácticas.
+
+Cuando te invoque con `@create_rule`, sigue estos pasos:
+1.  **Pregúntame el propósito principal de la nueva regla.** (Ej: "Definir estándares para los tests unitarios").
+2.  **Pregúntame el tipo de regla más adecuado:** `Always`, `Auto Attached`, `Agent Requested` o `Manual`. Justifica tu recomendación.
+3.  **Si es `Auto Attached`, pregúntame por los patrones `globs` necesarios.** (Ej: `src/tests/**/*.test.ts`).
+4.  **Si es `Agent Requested`, pídeme una `description` clara y concisa.**
+5.  **Solicítame el contenido principal de la regla en lenguaje natural o puntos clave.**
+6.  **Basado en mis respuestas, genera el contenido completo del archivo `.mdc`, incluyendo los metadatos correctos en el frontmatter y el contenido formateado en Markdown, siguiendo todas las directrices de claridad, concisión y accionabilidad.**

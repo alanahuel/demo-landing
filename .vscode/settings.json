@@ -1,0 +1,14 @@
+{
+
+  "cSpell.words": [
+    "WCAG",
+    "enlazables",
+    "focuseables"
+  ],
+  "cSpell.enableFileTypes": [
+    "astro",
+    "markdown",
+    "mdx",
+    "mdc" // Habilitamos el corrector para tus archivos .mdc
+  ]
+}

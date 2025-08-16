@@ -1,0 +1,41 @@
+
+@import "tailwindcss";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+  }
+  
+  /* Optimizaciones adicionales de rendimiento */
+  * {
+    /* Evitar recálculos innecesarios */
+    will-change: auto;
+  }
+  
+  /* Reducir el impacto de las animaciones en el rendimiento */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .icon-wrap {
+    @apply w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center mr-6 shrink-0 transition-transform duration-300 group-hover:scale-110;
+  }
+
+  .icon-emoji {
+    @apply text-2xl sm:text-3xl;
+  }
+  
+  .bg-gradient-radial {
+    background: radial-gradient(ellipse at top left, #FFFFFF 0%, #FFFFFF 50%, #FAFAF8 100%);
+  }
+}

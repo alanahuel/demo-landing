@@ -1,0 +1,122 @@
+---
+// Header minimal con backdrop blur optimizado
+---
+
+<header 
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/60 backdrop-blur-sm border-b border-gray-100/30"
+>
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 bg-black rounded-full flex items-center justify-center">
+          <span class="text-white text-sm font-bold">D</span>
+        </div>
+        <span class="text-xl font-bold text-gray-900">DemoLanding</span>
+      </div>
+
+      <!-- Navegación desktop -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#como-funciona" class="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium">
+          Cómo funciona
+        </a>
+        <a href="#beneficios" class="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium">
+          Beneficios
+        </a>
+        <a href="#faq" class="text-gray-700 hover:text-gray-900 transition-colors duration-200 font-medium">
+          FAQ
+        </a>
+      </nav>
+
+      <!-- CTA desktop -->
+      <div class="hidden md:flex items-center">
+        <button 
+          class="px-6 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-gray-600 focus:ring-offset-2"
+        >
+          Reserva demo
+        </button>
+      </div>
+
+      <!-- Botón menú móvil -->
+      <div class="md:hidden">
+        <button 
+          id="mobile-menu-button"
+          class="text-gray-700 hover:text-gray-900 focus:outline-none p-2"
+          aria-label="Abrir menú móvil"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Menú móvil desplegable -->
+    <div 
+      id="mobile-menu"
+      class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-gray-100/50"
+    >
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="#como-funciona" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50/50 rounded-md font-medium transition-colors duration-200">
+          Cómo funciona
+        </a>
+        <a href="#beneficios" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50/50 rounded-md font-medium transition-colors duration-200">
+          Beneficios
+        </a>
+        <a href="#faq" class="block px-3 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-50/50 rounded-md font-medium transition-colors duration-200">
+          FAQ
+        </a>
+        <div class="pt-4 pb-3 border-t border-gray-200/50">
+          <button class="w-full px-3 py-2.5 border-2 border-gray-800 text-gray-800 font-medium rounded-lg hover:bg-gray-800 hover:text-white transition-all duration-200">
+            Reserva demo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Espaciador para el contenido debajo del header -->
+<div class="h-16"></div>
+
+<script>
+  // Funcionalidad del menú móvil
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      
+      // Cambiar el icono del botón
+      const svg = mobileMenuButton.querySelector('svg');
+      if (svg) {
+        if (isHidden) {
+          // Cambiar a icono de cerrar
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />';
+        } else {
+          // Cambiar a icono de menú
+          svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
+        }
+      }
+    });
+  }
+
+  // Header con backdrop blur intensificado al hacer scroll
+  const header = document.getElementById('header');
+  
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 10) {
+        header.classList.add('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+        header.classList.remove('bg-white/60', 'backdrop-blur-sm');
+      } else {
+        header.classList.remove('bg-white/80', 'backdrop-blur-md', 'shadow-sm');
+        header.classList.add('bg-white/60', 'backdrop-blur-sm');
+      }
+    });
+  }
+</script>

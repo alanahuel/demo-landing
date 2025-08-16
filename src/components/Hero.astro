@@ -1,0 +1,104 @@
+---
+// Hero component - Onboarding sin fricción
+---
+
+<section class="relative min-h-[70vh] max-h-[80vh] flex items-center overflow-hidden">
+  <!-- Fondo degradado radial -->
+  <div class="absolute inset-0 bg-gradient-radial from-white via-white to-[#FAFAF8]"></div>
+  
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <!-- Columna izquierda - Contenido principal -->
+      <div class="space-y-8">
+        <div class="space-y-6">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+            Onboarding sin fricción.
+            <span class="block text-green-700">Más activaciones, más pago.</span>
+          </h1>
+          
+          <p class="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-lg">
+            Transforma tu onboarding en una experiencia fluida que convierte usuarios en clientes activos.
+          </p>
+        </div>
+        
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+            Comenzar ahora
+          </a>
+          <a href="#demo" class="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-lg transition-all duration-200 hover:bg-gray-50">
+            Ver cómo funciona
+          </a>
+        </div>
+        
+        <!-- Microcopia -->
+        <p class="text-sm text-gray-500 font-medium">
+          Implementación ligera · 100% medible
+        </p>
+      </div>
+      
+      <!-- Columna derecha - Mockup Dashboard -->
+      <div class="relative">
+        <!-- Mockup principal -->
+        <div class="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+          <!-- Header del dashboard -->
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center space-x-3">
+              <div class="w-3 h-3 bg-red-400 rounded-full"></div>
+              <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+            </div>
+            <h3 class="text-lg font-semibold text-gray-800">Dashboard de Onboarding</h3>
+          </div>
+          
+          <!-- KPIs antes/después -->
+          <div class="grid grid-cols-2 gap-6">
+            <!-- Antes -->
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-gray-500">Antes</p>
+              <div class="bg-red-50 rounded-lg p-4 border border-red-100">
+                <div class="text-2xl font-bold text-red-600">23%</div>
+                <div class="text-sm text-red-700">Tasa de activación</div>
+              </div>
+            </div>
+            
+            <!-- Después -->
+            <div class="space-y-3">
+              <p class="text-sm font-medium text-gray-500">Después</p>
+              <div class="bg-green-50 rounded-lg p-4 border border-green-100">
+                <div class="text-2xl font-bold text-green-600">41%</div>
+                <div class="text-sm text-green-700">Tasa de activación</div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Gráfico de barras simple -->
+          <div class="mt-6 space-y-2">
+            <div class="flex items-center space-x-2">
+              <span class="text-sm text-gray-600 w-16">Antes</span>
+              <div class="flex-1 bg-gray-200 rounded-full h-3">
+                <div class="bg-red-400 h-3 rounded-full" style="width: 23%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-700">23%</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-sm text-gray-600 w-16">Después</span>
+              <div class="flex-1 bg-gray-200 rounded-full h-3">
+                <div class="bg-green-400 h-3 rounded-full" style="width: 41%"></div>
+              </div>
+              <span class="text-sm font-medium text-gray-700">41%</span>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sticker flotante -->
+        <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12">
+          <div class="text-sm font-bold">Nudge activo</div>
+          <div class="text-xs">+18% activaciones</div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>

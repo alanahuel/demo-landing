@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+description: "Principios fundamentales de codificación KISS y DRY."
+---
+# PRINCIPIOS FUNDAMENTALES DE ARQUITECTURA
+
+## KISS (Keep It Simple, Stupid)
+Propón siempre la solución más simple y directa que cumpla con el requisito. Evita la optimización prematura, la sobreingeniería y la adición de complejidad innecesaria. El código debe ser legible y fácil de entender.[22, 23]
+
+## DRY (Don't Repeat Yourself)
+Antes de escribir nueva lógica, analiza el código base existente en busca de funciones o componentes similares. Si existe un patrón reutilizable, utilízalo. Si identificas código duplicado durante una modificación, recomienda explícitamente refactorizarlo en una función, componente o utilidad reutilizable.[22, 24]

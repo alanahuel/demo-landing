@@ -1,0 +1,18 @@
+---
+alwaysApply: true
+description: "Define Vercel como la plataforma de despliegue exclusiva y establece las directrices para la configuración, variables de entorno y el uso del adaptador de Astro."
+---
+
+# PLATAFORMA DE DESPLIEGUE: VERCEL
+
+**DIRECTIVAS DE DESPLIEGUE:**
+
+1.  **PLATAFORMA ÚNICA ES VERCEL:** Todo el despliegue, configuración de dominios y gestión de variables de entorno de producción se realiza exclusivamente a través de Vercel.
+
+2.  **ADAPTADOR DE ASTRO PARA VERCEL:** El proyecto debe estar configurado para usar el adaptador oficial de Astro para Vercel. Asegúrate de que `astro.config.mjs` incluya la integración correcta (`@astrojs/vercel/static` o `@astrojs/vercel/serverless` según corresponda al modo de salida).
+
+3.  **GESTIÓN DE VARIABLES DE ENTORNO:**
+    * **Desarrollo Local:** Las variables de entorno para desarrollo local deben gestionarse en un archivo `.env` en la raíz del proyecto. Este archivo NUNCA debe ser versionado en Git.
+    * **Producción:** Las variables de entorno para producción DEBEN ser configuradas de forma segura en el panel de control del proyecto en Vercel. No incluyas valores de producción en el código.
+
+4.  **PROHIBIDAS OTRAS PLATAFORMAS:** No generes, sugieras ni implementes código o configuraciones específicas para otras plataformas de despliegue como Netlify, AWS Amplify, Firebase Hosting o Cloudflare Pages. El código debe permanecer agnóstico o específico para Vercel.
