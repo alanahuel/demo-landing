@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://demo-landing.vercel.app/sitemap.xml
+
+# Crawl-delay para ser respetuoso con el servidor
+Crawl-delay: 1
+
+# Permitir acceso a recursos importantes
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /favicon.svg
+
+# Bloquear archivos de configuración
+Disallow: /_headers
+Disallow: /vercel.json
+Disallow: /package.json
+Disallow: /tsconfig.json

@@ -1,0 +1,137 @@
+/* Estilos para mejorar la accesibilidad y SEO */
+
+/* Mejoras de focus para navegación por teclado */
+.btn-accessible:focus,
+.btn-accessible:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+/* Anillos de focus visibles */
+.focus-visible-ring:focus-visible {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Mejoras de hover para botones */
+.btn-hover-lift {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.btn-hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animaciones de entrada para elementos */
+.fade-slide-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide-in.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mejoras de contraste para accesibilidad */
+@media (prefers-contrast: high) {
+  .text-gray-600 {
+    color: #374151 !important;
+  }
+  
+  .text-gray-500 {
+    color: #6b7280 !important;
+  }
+  
+  .border-gray-300 {
+    border-color: #d1d5db !important;
+  }
+}
+
+/* Reducción de movimiento para usuarios sensibles */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .fade-slide-in {
+    transition: none;
+  }
+}
+
+/* Mejoras de legibilidad para texto */
+.text-content {
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Estilos para enlaces de skip navigation (accesibilidad) */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #16a34a;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Mejoras para lectores de pantalla */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Estilos para elementos de navegación semántica */
+nav[role="navigation"] ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav[role="navigation"] li {
+  margin: 0;
+}
+
+/* Mejoras para formularios */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #16a34a;
+  outline-offset: 2px;
+}
+
+/* Estilos para mensajes de error y éxito */
+.error-message {
+  color: #dc2626;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.success-message {
+  color: #16a34a;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}

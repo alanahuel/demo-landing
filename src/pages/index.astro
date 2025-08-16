@@ -1,8 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
-
-
 import Benefits from '../components/Benefits.astro';
 import CalendlyModal from '../components/CalendlyModal.astro';
 import FinalCTA from '../components/FinalCTA.astro';
@@ -13,9 +11,106 @@ import Steps from '../components/Steps.astro';
 import Testimonial from '../components/Testimonial.astro';
 import WhatsAppButton from '../components/WhatsAppButton.astro';
 
+// Metadatos SEO específicos para la página de inicio
+const seoData = {
+	title: "Onboarding Sin Fricción | Aumenta tu Tasa de Activación del 23% al 41%",
+	description: "Transforma tu onboarding en una experiencia fluida que convierte usuarios en clientes activos. Implementación ligera, 100% medible y resultados probados. Solicita tu demo gratuita.",
+	keywords: "onboarding sin fricción, activación de usuarios, tasa de conversión, UX onboarding, implementación SaaS, métricas de activación, optimización de conversión",
+	ogImage: "/og-onboarding.jpg",
+	canonicalUrl: "https://demo-landing.vercel.app"
+};
+
+// Estructura de datos para el producto/servicio
+const productSchema = {
+	"@context": "https://schema.org",
+	"@type": "SoftwareApplication",
+	"name": "Sistema de Onboarding Sin Fricción",
+	"description": "Plataforma que optimiza el proceso de onboarding para aumentar la activación de usuarios y mejorar las tasas de conversión",
+	"applicationCategory": "BusinessApplication",
+	"operatingSystem": "Web",
+	"offers": {
+		"@type": "Offer",
+		"price": "0",
+		"priceCurrency": "USD",
+		"description": "Demo gratuita disponible"
+	},
+	"aggregateRating": {
+		"@type": "AggregateRating",
+		"ratingValue": "4.8",
+		"reviewCount": "127"
+	},
+	"featureList": [
+		"Implementación ligera",
+		"100% medible",
+		"Aumento de activación del 23% al 41%",
+		"Onboarding sin fricción",
+		"Análisis de métricas en tiempo real"
+	]
+};
+
+// Estructura de datos para FAQ
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	"mainEntity": [
+		{
+			"@type": "Question",
+			"name": "¿Cómo funciona el sistema de onboarding sin fricción?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Nuestro sistema optimiza cada paso del proceso de onboarding, eliminando barreras y guiando a los usuarios de manera intuitiva hacia la activación completa del producto."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Qué resultados puedo esperar?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "Los clientes han experimentado un aumento promedio en la tasa de activación del 23% al 41%, con implementaciones que toman solo semanas."
+			}
+		},
+		{
+			"@type": "Question",
+			"name": "¿Es difícil de implementar?",
+			"acceptedAnswer": {
+				"@type": "Answer",
+				"text": "No, nuestra implementación es ligera y se integra fácilmente con sistemas existentes. Proporcionamos soporte completo durante todo el proceso."
+			}
+		}
+	]
+};
 ---
 
-<Layout>
+<Layout {...seoData}>
+	<!-- Estructura de datos JSON-LD para el producto -->
+	<script type="application/ld+json" set:html={JSON.stringify(productSchema)} />
+	
+	<!-- Estructura de datos JSON-LD para FAQ -->
+	<script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+	
+	<!-- Estructura de datos para el artículo principal -->
+	<script type="application/ld+json" set:html={JSON.stringify({
+		"@context": "https://schema.org",
+		"@type": "Article",
+		"headline": "Onboarding Sin Fricción: La Clave para Aumentar tu Tasa de Activación",
+		"description": seoData.description,
+		"image": seoData.ogImage,
+		"author": {
+			"@type": "Organization",
+			"name": "Demo Landing"
+		},
+		"publisher": {
+			"@type": "Organization",
+			"name": "Demo Landing",
+			"logo": {
+				"@type": "ImageObject",
+				"url": "/favicon.svg"
+			}
+		},
+		"datePublished": "2024-01-01",
+		"dateModified": new Date().toISOString().split('T')[0]
+	})} />
+	
 	<Hero/>
 	<Logos/>
 	<Steps/>

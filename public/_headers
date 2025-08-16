@@ -1,15 +1,36 @@
+# Headers de seguridad y rendimiento para SEO
 /*
-  X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
 
-/global.css
+# Headers de caché para recursos estáticos
+*.css
   Cache-Control: public, max-age=31536000, immutable
 
-/js/*
+*.js
   Cache-Control: public, max-age=31536000, immutable
 
-/_assets/*
+*.svg
   Cache-Control: public, max-age=31536000, immutable
+
+*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Headers para el sitemap
+/sitemap.xml
+  Cache-Control: public, max-age=86400
+  Content-Type: application/xml
+
+# Headers para robots.txt
+/robots.txt
+  Cache-Control: public, max-age=86400
+  Content-Type: text/plain

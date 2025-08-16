@@ -1,17 +1,81 @@
 ---
 import '../styles/global.css';
+import '../styles/seo.css';
 
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+
+// Metadatos SEO por defecto
+export interface Props {
+	title?: string;
+	description?: string;
+	keywords?: string;
+	ogImage?: string;
+	ogType?: string;
+	canonicalUrl?: string;
+	noIndex?: boolean;
+}
+
+const {
+	title = "Onboarding Sin Fricción | Soluciones Digitales para Activación de Usuarios",
+	description = "Transforma tu onboarding en una experiencia fluida que convierte usuarios en clientes activos. Implementación ligera y 100% medible. Aumenta tu tasa de activación del 23% al 41%.",
+	keywords = "onboarding, activación de usuarios, conversión, UX, experiencia de usuario, SaaS, software, implementación, métricas, optimización",
+	ogImage = "/og-image.jpg",
+	ogType = "website",
+	canonicalUrl = "https://demo-landing.vercel.app",
+	noIndex = false
+} = Astro.props;
+
+// URL canónica
+const canonical = new URL(Astro.url.pathname, canonicalUrl);
 ---
+
 <!doctype html>
 <html lang="es">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Demo Landing - Soluciones Digitales</title>
+		
+		<!-- Metadatos SEO básicos -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<meta name="author" content="Demo Landing" />
+		<meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+		
+		<!-- URL canónica -->
+		<link rel="canonical" href={canonical} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content={ogType} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:locale" content="es_ES" />
+		<meta property="og:site_name" content="Demo Landing" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={canonical} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		
+		<!-- Metadatos adicionales para SEO -->
+		<meta name="theme-color" content="#16a34a" />
+		<meta name="msapplication-TileColor" content="#16a34a" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+		<meta name="apple-mobile-web-app-title" content="Demo Landing" />
+		
+		<!-- Preconnect para rendimiento -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		
 		<!-- Headers de seguridad -->
 		<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';">
@@ -19,12 +83,46 @@ import Header from '../components/Header.astro';
 		<meta http-equiv="X-Frame-Options" content="DENY">
 		<meta http-equiv="X-XSS-Protection" content="1; mode=block">
 		
+		<!-- Estructura de datos JSON-LD -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "Demo Landing",
+			"description": description,
+			"url": canonical,
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": `${canonical}?search={search_term_string}`,
+				"query-input": "required name=search_term_string"
+			}
+		})} />
+		
 		<!-- El CSS se importa automáticamente desde el frontmatter -->
 	</head>
 	<body>
 		<Header/>
-		<slot />
+		<main>
+			<slot />
+		</main>
 		<Footer/>
+		
+		<!-- Estructura de datos para la organización -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "Organization",
+			"name": "Demo Landing",
+			"url": canonical,
+			"logo": `${canonical}/favicon.svg`,
+			"sameAs": [
+				"https://twitter.com/demolanding",
+				"https://linkedin.com/company/demolanding"
+			],
+			"contactPoint": {
+				"@type": "ContactPoint",
+				"contactType": "customer service",
+				"availableLanguage": "Spanish"
+			}
+		})} />
 	</body>
 </html>
 
@@ -34,5 +132,9 @@ import Header from '../components/Header.astro';
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+	
+	main {
+		min-height: 100vh;
 	}
 </style>

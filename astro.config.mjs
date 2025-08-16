@@ -5,6 +5,7 @@ import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
+  integrations: [],
   output: 'static',
   adapter: vercel({
     // Configuración optimizada para Vercel
@@ -12,6 +13,10 @@ export default defineConfig({
       enabled: false, // Deshabilitar web analytics temporalmente
     },
   }),
+  
+  // Configuración de SEO
+  site: 'https://demo-landing.vercel.app',
+  
   vite: {
     plugins: [tailwindcss()],
     build: {
