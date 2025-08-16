@@ -2,32 +2,32 @@
 // Hero component - Onboarding sin fricción
 ---
 
-<section class="relative min-h-[70vh] max-h-[80vh] flex items-center overflow-hidden">
+<section class="relative pt-20 pb-16 lg:pt-24 lg:pb-20">
   <!-- Fondo degradado radial -->
   <div class="absolute inset-0 bg-gradient-radial from-white via-white to-[#FAFAF8]"></div>
   
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
       
       <!-- Columna izquierda - Contenido principal -->
-      <div class="space-y-8">
-        <div class="space-y-6">
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+      <div class="space-y-6 lg:space-y-8">
+        <div class="space-y-4 lg:space-y-6">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight">
             Onboarding sin fricción.
             <span class="block text-green-700">Más activaciones, más pago.</span>
           </h1>
           
-          <p class="text-xl sm:text-2xl text-gray-600 leading-relaxed max-w-lg">
+          <p class="text-lg sm:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-lg">
             Transforma tu onboarding en una experiencia fluida que convierte usuarios en clientes activos.
           </p>
         </div>
         
         <!-- CTAs -->
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#contact" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-8 py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <a href="#contact" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl text-sm sm:text-base">
             Comenzar ahora
           </a>
-          <a href="#demo" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-lg hover:bg-gray-50">
+          <a href="#demo" class="btn-accessible btn-hover-lift focus-visible-ring inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:text-gray-900 font-semibold rounded-lg hover:bg-gray-50 text-sm sm:text-base">
             Ver cómo funciona
           </a>
         </div>
@@ -39,55 +39,55 @@
       </div>
       
       <!-- Columna derecha - Mockup Dashboard -->
-      <div class="relative">
+      <div class="relative mt-8 lg:mt-0">
         <!-- Mockup principal -->
-        <div class="relative bg-white rounded-2xl shadow-2xl p-6 border border-gray-100">
+        <div class="relative bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-gray-100">
           <!-- Header del dashboard -->
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center space-x-3">
-              <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-              <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-              <div class="w-3 h-3 bg-green-400 rounded-full"></div>
+          <div class="flex items-center justify-between mb-4 sm:mb-6">
+            <div class="flex items-center space-x-2 sm:space-x-3">
+              <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-red-400 rounded-full"></div>
+              <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-yellow-400 rounded-full"></div>
+              <div class="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
             </div>
-            <h3 class="text-lg font-semibold text-gray-800">Dashboard de Onboarding</h3>
+            <h3 class="text-base sm:text-lg font-semibold text-gray-800">Dashboard de Onboarding</h3>
           </div>
           
           <!-- KPIs antes/después -->
-          <div class="grid grid-cols-2 gap-6">
+          <div class="grid grid-cols-2 gap-4 sm:gap-6">
             <!-- Antes -->
-            <div class="space-y-3">
-              <p class="text-sm font-medium text-gray-500">Antes</p>
-              <div class="bg-red-50 rounded-lg p-4 border border-red-100">
-                <div class="text-2xl font-bold text-red-600">23%</div>
-                <div class="text-sm text-red-700">Tasa de activación</div>
+            <div class="space-y-2 sm:space-y-3">
+              <p class="text-xs sm:text-sm font-medium text-gray-500">Antes</p>
+              <div class="bg-red-50 rounded-lg p-3 sm:p-4 border border-red-100">
+                <div class="text-xl sm:text-2xl font-bold text-red-600">23%</div>
+                <div class="text-xs sm:text-sm text-red-700">Tasa de activación</div>
               </div>
             </div>
             
             <!-- Después -->
-            <div class="space-y-3">
-              <p class="text-sm font-medium text-gray-500">Después</p>
-              <div class="bg-green-50 rounded-lg p-4 border border-green-100">
-                <div class="text-2xl font-bold text-green-600">41%</div>
-                <div class="text-sm text-green-700">Tasa de activación</div>
+            <div class="space-y-2 sm:space-y-3">
+              <p class="text-xs sm:text-sm font-medium text-gray-500">Después</p>
+              <div class="bg-green-50 rounded-lg p-3 sm:p-4 border border-green-100">
+                <div class="text-xl sm:text-2xl font-bold text-green-600">41%</div>
+                <div class="text-xs sm:text-sm text-green-700">Tasa de activación</div>
               </div>
             </div>
           </div>
           
           <!-- Gráfico de barras simple -->
-          <div class="mt-6 space-y-2">
+          <div class="mt-4 sm:mt-6 space-y-2">
             <div class="flex items-center space-x-2">
-              <span class="text-sm text-gray-600 w-16">Antes</span>
-              <div class="flex-1 bg-gray-200 rounded-full h-3">
-                <div class="bg-red-400 h-3 rounded-full" style="width: 23%"></div>
+              <span class="text-xs sm:text-sm text-gray-600 w-12 sm:w-16">Antes</span>
+              <div class="flex-1 bg-gray-200 rounded-full h-2.5 sm:h-3">
+                <div class="bg-red-400 h-2.5 sm:h-3 rounded-full" style="width: 23%"></div>
               </div>
-              <span class="text-sm font-medium text-gray-700">23%</span>
+              <span class="text-xs sm:text-sm font-medium text-gray-700">23%</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="text-sm text-gray-600 w-16">Después</span>
-              <div class="flex-1 bg-gray-200 rounded-full h-3">
-                <div class="bg-green-400 h-3 rounded-full" style="width: 41%"></div>
+              <span class="text-xs sm:text-sm text-gray-600 w-12 sm:w-16">Después</span>
+              <div class="flex-1 bg-gray-200 rounded-full h-2.5 sm:h-3">
+                <div class="bg-green-400 h-2.5 sm:h-3 rounded-full" style="width: 41%"></div>
               </div>
-              <span class="text-sm font-medium text-gray-700">41%</span>
+              <span class="text-xs sm:text-sm font-medium text-gray-700">41%</span>
             </div>
           </div>
         </div>
@@ -95,9 +95,9 @@
         <!-- Sticker flotante con animación -->
         <div 
           id="hero-sticker"
-          class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg transform rotate-12 fade-slide-in"
+          class="absolute -top-2 sm:-top-4 -right-2 sm:-right-4 bg-green-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg transform rotate-12 fade-slide-in"
         >
-          <div class="text-sm font-bold">Nudge activo</div>
+          <div class="text-xs sm:text-sm font-bold">Nudge activo</div>
           <div class="text-xs">+18% activaciones</div>
         </div>
       </div>
